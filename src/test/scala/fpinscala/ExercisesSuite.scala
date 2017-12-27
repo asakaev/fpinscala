@@ -36,4 +36,12 @@ class ExercisesSuite extends FunSuite with Exercises {
     assert(curry(f)(1)(2) == f(1, 2))
   }
 
+  /**
+    * Exercise 2.4
+    */
+  test("uncurry") {
+    val f: Int => Int => Int = a => b => a + b
+    assert(uncurry(f)(1, 2) == f(1)(2))
+  }
+
 }
