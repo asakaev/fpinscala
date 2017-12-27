@@ -3,6 +3,10 @@ package fpinscala
 import org.scalatest.FunSuite
 
 class ExercisesSuite extends FunSuite with Exercises {
+
+  /**
+    * Exercise 2.1
+    */
   test("fib") {
     assert(fib(0) == 0)
     assert(fib(1) == 1)
@@ -10,5 +14,17 @@ class ExercisesSuite extends FunSuite with Exercises {
     assert(fib(3) == 2)
     assert(fib(4) == 3)
     assert(fib(20) == 6765)
+  }
+
+  /**
+    * Exercise 2.2
+    */
+  test("isSorted") {
+    val p: (Int, Int) => Boolean = (a, b) => a <= b
+    assert(isSorted(Array(1, 2, 3), p))
+    assert(isSorted(Array(1, 1), p))
+    assert(!isSorted(Array(2, 1), p))
+    assert(isSorted(Array(1), p))
+    assert(isSorted(Array.empty, p))
   }
 }
