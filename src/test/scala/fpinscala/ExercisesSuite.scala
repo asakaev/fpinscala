@@ -44,4 +44,13 @@ class ExercisesSuite extends FunSuite with Exercises {
     assert(uncurry(f)(1, 2) == f(1)(2))
   }
 
+  /**
+    * Exercise 2.5
+    */
+  test("compose") {
+    val f: String => Int = a => a.toInt
+    val g: Int => String = a => a.toString
+    assert(compose(f, g)(42) == 42)
+  }
+
 }
