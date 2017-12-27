@@ -27,4 +27,13 @@ class ExercisesSuite extends FunSuite with Exercises {
     assert(isSorted(Array(1), p))
     assert(isSorted(Array.empty, p))
   }
+
+  /**
+    * Exercise 2.3
+    */
+  test("curry") {
+    val f: (Int, Int) => Int = (a, b) => a + b
+    assert(curry(f)(1)(2) == f(1, 2))
+  }
+
 }

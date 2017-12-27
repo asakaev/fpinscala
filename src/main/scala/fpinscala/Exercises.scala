@@ -25,4 +25,10 @@ trait Exercises {
     loop(0, acc = true)
   }
 
+  /**
+    * Exercise 2.3
+    */
+  def curry[A, B, C](f: (A, B) => C): A => (B => C) =
+    a => b => f(a, b)
+
 }
